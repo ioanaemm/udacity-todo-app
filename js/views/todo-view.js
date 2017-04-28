@@ -18,6 +18,7 @@ var app = app || {};
 		// The DOM events specific to an item.
 		events: {
 			'click .toggle': 'toggleCompleted',
+			'click .edit-btn': 'edit',
 			'dblclick label': 'edit',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
@@ -63,6 +64,7 @@ var app = app || {};
 			return this.model.get('completed') ?
 				app.TodoFilter === 'active' :
 				app.TodoFilter === 'completed';
+
 		},
 
 		// Toggle the `"completed"` state of the model.
